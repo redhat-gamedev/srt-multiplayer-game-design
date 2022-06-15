@@ -1,4 +1,4 @@
-# Scaleable Multiplayer Games with OpenShift
+# Space Ring Things - Scaleable Multiplayer Games with OpenShift
 Multiplayer games, especially at large scale, have unique considerations for
 their design. While traditional monolithic game server design has served the
 industry well, it's possible that a microservices-based approach could work
@@ -13,45 +13,34 @@ paper](https://pdfs.semanticscholar.org/be47/da0d4a057f5e2f9324a476c1417a3fa9ad8
 by Mauno Vähä that explores microservices design as it applies to multiplayer
 online RPGs. We will use it as a reference for this project.
 
-[Design Document](https://docs.google.com/document/d/1UFdZLXFNJEXsKti0vM-CDGuFxrR4l7G_yddqmNFJjb8)
+## Game Overview
+**Concept:** Battle Royale-esque “last person standing” space ship battles
 
-## Thoughts / Notes (2020-09-09)
-* RTS potentially 
-* precalculate graphical/physics in cloud and send to client
-* "How could we have a game on OpenShift with millions of simultaneous players?"
-* how do we deal with state distribution at massive scale?
-* short term state vs persistent state?
+**Genre:** Battle Royale, 2D top-down looter shooter
 
-## Thematic Game Element Thoughts
-* resource management
-* control one or more units
-* * units can change over time ("levels")
-* * units can have inventory
-* * units can have some stats
-* * are units persistent when players are not present?
-* interact with other players
-* what other forms of data would persist? (win/loss, etc)
-* some kind of events
-* * interactions between two or more players
-* * how do these impact the universe?
+**Elevator Pitch:** In space, if you’re not first, you’re last. But being first
+comes with consequences. Vanquish your opponents and pick up components from
+the wreckage. Make good choices, because each component you strap on makes you
+heavier and pulls you deeper into the gravity well - where everyone else with
+more guns and more gear already is.
 
-## Committed Elements
-* space theme
-* 2D
-* "circle of death" fight to the center
-* map scales out with number of players
-* * rings / sectors
-* * can move in but not out (unless you die)
-* some concept of cash 
-* player has a ship that they can modify
-* ship has a fixed number of slots for "loot"/modifications
-* modifications (items) have rarity and specs
-* chat system
-* leaderboards
-* "real time"
-* when players leave a sector that sector can disappear (too few people)
-* browser-based "client" minimum experience
-* gravitational trope to determine where players can spawn
+## Gameplay and Art References
+Combat similar to [Star Control: Origins](https://en.wikipedia.org/wiki/Star_Control:_Origins)
+Technology and battle tactics inspired by [Firefly's Reavers](https://en.wikipedia.org/wiki/Reaver_(Firefly)
+Minimal art style to start inspired by [Radius Raid](https://js13kgames.com/games/radius-raid/index.html)
+Also art style inspired by [Warships](https://news.blizzard.com/en-gb/starcraft2/10058311/arcade-highlight-warships)
+
+## Key Game Design Features
+* Infinite scale universe grows as more players join the game
+* "real time" (not turn-based)
+* Long term persistent state
+* Click and command rather than twin-stick
+* 2D Top Down
+* Permadeath - if your ship is destroyed, you start over
+* Roguelike - Sectors are procedurally generated
+* Actor removal drops "loot" which can be used to modify ship
+* Ships get heavier as more mods are added which pulls them towards
+  the center of the game universe
 
 ## Architectural Design
 2022 update - based on team conversation here is the updated draft components architecture:
@@ -73,5 +62,3 @@ Original design components list is below:
 * * how many players in a sector / ring?
 * data service (data grid?)
 * "ai service" for fake players / NPC
-
-
