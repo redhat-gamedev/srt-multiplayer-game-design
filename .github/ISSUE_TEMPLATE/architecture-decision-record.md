@@ -2,7 +2,7 @@
 name: Architecture Decision Record
 about: Capture an important architecture decision made
 title: ADR - [TITLE_GOES_HERE]
-labels: ''
+labels: ADR
 assignees: ''
 
 ---
