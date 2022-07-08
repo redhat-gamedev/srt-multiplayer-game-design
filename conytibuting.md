@@ -194,7 +194,17 @@ Unsure where to begin contributing to SRT? You can start by looking through thes
 * [Beginner issues][beginner] - issues which should only require a few lines of code, and a test or two.
 * [Help wanted issues][help-wanted] - issues which should be a bit more involved than `beginner` issues.
 
-Both issue lists are sorted by total number of comments. While not perfect, number of comments is a reasonable proxy for impact a given change will have.
+Once you have an issue to work on you're ready to get started. The following workflow is based on the GitHub [Quickstart](https://docs.github.com/en/get-started/quickstart) documentation.
+	
+Workflow:
+
+* **Determine [which repository you will be working with](#what-is-srt)**
+* **[Fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)**
+* **[Create a branch in your fork](https://docs.github.com/en/get-started/quickstart/github-flow#create-a-branch)**
+* **[Work on your issue](https://docs.github.com/en/get-started/quickstart/github-flow#make-changes)**
+* Create your Pull Request
+
+You can also use the [CLI](https://training.github.com/downloads/github-git-cheat-sheet.pdf) to follow the workflow. 
 
 ### Pull Requests
 
